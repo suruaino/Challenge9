@@ -1,0 +1,311 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root{
+    /* ### Primary */
+--Dark-Blue-Intro: hsl(217, 28%, 15%); /* (intro and email sign up background)*/
+--Dark-Blue-Main: hsl(218, 28%, 13%); /*  (main background)*/
+--Dark-Blue-Footer: hsl(216, 53%, 9%); /*  (footer background)*/
+--Dark-Blue-Testimonial: hsl(219, 30%, 18%);/*  (testimonials background)*/
+--Dark-Blue-signup: hsl(219, 23%, 17%); /*  (sign-up background)*/
+
+/* ### Accent */
+--Cyan: hsl(176, 68%, 64%); /* (inside call-to-action gradient)*/
+--Btn-Cyan: hsl(177, 46%, 63%); /* (hover call-to-action gradient)*/
+--Blue : hsl(198, 60%, 50%);/* (inside call-to-action gradient)*/
+--Light: hsl(0, 100%, 63%);/*  Red (error)*/
+
+/* ### Neutral */
+--White: hsl(0, 0%, 100%);
+}
+
+body{
+
+    background-color: var(--Dark-Blue-Main);
+    /* background-position: 50%;
+    background-size: contain; */
+    height: 100vh;
+    font-family: Raleway;
+}
+
+/*The about article are strictly styles here with vanila css alone*/
+main .introduction{
+    background: linear-gradient(180deg, var(--Dark-Blue-Intro) 68%, var(--Dark-Blue-Main) 50%, var(--Dark-Blue-Main) 100%);
+    z-index: 10;
+    /* line-height: 3rem; */
+    letter-spacing: .1rem;
+
+    
+}
+main .introduction header nav ul li::after{
+    content: "";
+    display: block;
+    height: .08rem;
+    width: 100%;
+    margin-top: .1rem;
+    transform: scale(0);
+    background-color: var(--Cyan);
+    transition: transform 0.5s;
+}
+main .introduction header nav ul li:hover::after{
+    transform: scale(1);
+}
+main .introduction .curvybg{
+    /* transform: scaleY(1) scaleX(1); */
+    position: absolute;
+    bottom: 32%;
+    left: 0;
+    right: 0;
+    z-index: -10;
+    min-width: 100%;
+    max-height: 20%;
+}
+main .introduction .intro-content{
+    margin: 0 auto;
+    
+}
+main .introduction button{
+    background: linear-gradient(90deg, var(--Cyan), var(--Blue) 120%);
+    height: 3rem;
+    max-width: 20rem;
+    letter-spacing: .05rem;
+}
+main .introduction button:hover{
+    background: var(--Btn-Cyan);
+    box-shadow: 
+    inset 0 0 2px var(--Cyan),
+    0 0 4px var(--Blue),
+    inset 0 0 6px var(--White)
+    ;
+}
+
+main #about .access{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5rem;
+}
+main #about .access > img{
+    width: 60px;
+}
+main #about .access .content{
+    display: flex;
+    flex-direction: column;
+    gap: .8rem;
+}
+main #about .access h2{
+    font-size: 1.125rem;
+    font-weight: bold;
+}
+main #about .access p{
+    font-size: .85rem;
+}
+
+main #assurance .content p{
+    font-size: .85rem
+}
+main #testimonial > img{
+    width: 30px;
+    position: absolute;
+    top: -4%;
+    left: 0%;
+}
+main #testimonial .card{
+    background-color: var(--Dark-Blue-Testimonial);
+    padding: 1.3rem 1.3rem;
+    text-align: left;
+    font-size: .7rem;
+    line-height: 1.1rem;
+    border-radius: .3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    z-index: 1;
+}
+
+main #assurance .content a{
+    font-size: .75rem; 
+    border-bottom: 2px solid var(--Cyan);
+    color: var(--Cyan);
+    width: fit-content;
+    padding-bottom: .5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:  .5rem;
+}
+main #assurance .content a i{
+    background-color: var(--Cyan);
+    color: var(--Dark-Blue-Main);
+    width: 10px;
+    height: 10px;
+    padding: .5rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 4px var(--Cyan);
+   
+}
+main #assurance .content a:hover{
+    border-bottom: 2px solid var(--White) ;
+    color: var(--White) ;
+}
+main #assurance .content a:hover i{
+    background-color: var(--White);
+    box-shadow: 0 0 4px var(--White);
+}
+main #testimonial .card .profile{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+main #testimonial .card .profile img{
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+}
+main #testimonial .card .profile span h2{
+    font-weight: bold;
+}
+main #sign-up{
+    background-color: var(--Dark-Blue-signup);
+    transform: translateY(12rem);
+    margin: 0 1.25rem;
+    margin-top: -1.5rem;
+    /* display: none; */
+}
+main #sign-up label{
+    visibility: hidden;
+    color: var(--Light);
+}
+main #sign-up form input{
+    height: 3.3rem;
+    letter-spacing: .05rem;
+}
+main #sign-up form button{
+    background: linear-gradient(90deg, var(--Cyan), var(--Blue) 120%);
+    height: 3rem;
+    letter-spacing: .05rem;
+}
+main #sign-up form button:hover{
+    background: var(--Btn-Cyan);
+    box-shadow: 
+        inset 0 0 2px var(--Cyan),
+        0 0 4px var(--Blue),
+        inset 0 0 6px var(--White)
+    ;
+}
+footer{
+    background-color: var(--Dark-Blue-Footer);
+}
+footer .right ul li{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    border: 1px solid var(--White);
+    border-radius: 50%;
+}
+footer .right ul li:hover{
+    border: 1px solid var(--Cyan);
+}
+
+footer .center ul li:hover{
+    font-weight: bold;
+}
+footer .right ul li:hover i{
+    color: var(--Cyan);
+}
+@media only screen and (min-width: 768px){
+    main .introduction{
+        background: linear-gradient(180deg, var(--Dark-Blue-Intro) 100%, var(--Dark-Blue-Main) 50%, var(--Dark-Blue-Main) 100%);
+             
+    }
+    main .introduction .curvybg{
+
+        bottom: 3%;
+        min-width: 100%;
+        max-height: 20%;
+        transform: scaleY(1.4);
+    }
+    main .introduction button{
+       
+        height: 4rem;
+        max-width: 23rem;
+        border-radius: 6rem;
+    }
+    main #about{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    main #about .access > img{
+        width: 90px;
+    }
+    main #about .access h2{
+        font-size: 1.5rem;
+       
+    }
+    main #about .access p{
+        font-size: .85rem;
+        padding: 0 2rem;
+    }
+    main #assurance .content h2{
+        font-size: 2.5rem;
+        line-height: 3rem;
+        letter-spacing: .1rem;
+        padding-right: 4rem;
+    }
+    main #assurance .content p{
+        font-size: 1.1rem
+    }
+    main #testimonial .card{
+        padding: 2rem 1.5rem;
+        padding-bottom: 1.5rem;
+        gap: 1.5rem; 
+    }
+    main #testimonial > img{
+        width: 50px;
+        top: -12%;
+        left: 0%;
+        right: 100%;
+    }
+    main #testimonial .card p{
+        font-size: 1rem;
+        line-height: 1.5rem
+    }
+
+    main #sign-up{
+   
+        transform: translateY(9rem);
+        /* margin: 0 18rem; */
+        margin: 0 5rem;
+        margin-top: -1.5rem;
+        padding: 3rem 2rem;
+    }
+    footer .bottom{
+        display: grid;
+        grid-template-columns: 3fr 1fr 1fr;
+        
+    }
+    /* main #about .access .content{
+        
+        gap: 1rem;
+    } */
+}
+@media only screen and (min-width: 1024px){
+    main #sign-up{
+        margin: 0 18rem;
+        margin-top: -1.5rem;
+        padding: 3rem 5rem;
+    }
+    main #testimonial > img{
+        width: 50px;
+        top: -15%;
+        left: 0%;
+        right: 100%;
+    }
+}
